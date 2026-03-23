@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ubicación de Auditsa: Calle Larga y Huayna Cápac, frente al Museo Pumapungo, Cuenca, Ecuador." />
+  <title>Ubicación | Auditsa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+.map-section{padding:80px 0;}
+.map-inner{display:grid;grid-template-columns:380px 1fr;gap:40px;align-items:start;}
+.location-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);}
+.location-card-header{background:linear-gradient(135deg,var(--black),var(--purple-deeper));padding:28px;color:white;}
+.location-card-header h3{color:white;font-size:1.2rem;margin-bottom:6px;}
+.location-card-header p{color:rgba(255,255,255,.6);font-size:.9rem;margin:0;}
+.location-items{padding:28px;display:flex;flex-direction:column;gap:0;}
+.location-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--gray-100);}
+.location-item:last-child{border-bottom:none;padding-bottom:0;}
+.location-item-icon{width:42px;height:42px;background:var(--purple-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--purple);font-size:1rem;flex-shrink:0;}
+.location-item-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-600);margin-bottom:4px;}
+.location-item-value{font-size:.92rem;color:var(--black);font-weight:500;line-height:1.4;}
+.directions-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;background:var(--purple);color:white;font-weight:700;font-size:.95rem;border-radius:0 0 var(--radius-lg) var(--radius-lg);transition:all var(--transition);text-align:center;}
+.directions-btn:hover{background:var(--black);}
+.map-container{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);}
+.map-container iframe{width:100%;height:540px;display:block;border:none;}
+.directions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.direction-card{background:white;border-radius:var(--radius-md);padding:28px 22px;text-align:center;box-shadow:var(--shadow-sm);border:1px solid var(--gray-100);transition:all var(--transition);}
+.direction-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--purple);}
+.direction-icon{font-size:2.2rem;margin-bottom:14px;}
+.direction-card h4{margin-bottom:8px;font-size:1rem;}
+.direction-card p{font-size:.88rem;color:var(--gray-600);margin:0;line-height:1.65;}
+.hours-card{background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden;}
+.hours-card-header{background:var(--black);padding:24px 32px;}
+.hours-card-header h3{color:white;font-size:1.2rem;}
+.hours-table{padding:24px 32px;}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--gray-100);font-size:.9rem;}
+.hours-row:last-child{border-bottom:none;}
+.hours-day{font-weight:600;color:var(--black);}
+.hours-time{color:var(--purple);font-weight:600;}
+.hours-closed{color:var(--gray-200);}
+.note-box{background:var(--purple-pale);border-left:4px solid var(--purple);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:16px 20px;margin:24px 32px;font-size:.88rem;color:var(--black);}
+@media(max-width:900px){.map-inner{grid-template-columns:1fr;}.map-container iframe{height:380px;}.directions-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.directions-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Auditsa – Inicio">
+        <img data-logo="navbar" src="assets/MORADO_2.png" alt="Auditsa Consultorios Auditivos"  style="width: 200px; height: auto;"/>
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ubicacion.html">Ubicación</a></li>
+        <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Inicio</a><i class="fas fa-chevron-right"></i><span>Ubicación</span></nav>
+      <h1>¿Dónde encontrarnos?</h1>
+      <p>Estamos en el corazón histórico de Cuenca, fácil de encontrar y accesible.</p>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="container">
+      <div class="map-inner">
+        <div class="fade-up">
+          <div class="location-card">
+            <div class="location-card-header"><h3>Auditsa</h3><p>Consultorios Auditivos</p></div>
+            <div class="location-items">
+              <div class="location-item"><div class="location-item-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="location-item-label">Dirección</div><div class="location-item-value" data-cfg="calle">Calle Larga y Huayna Cápac</div></div></div>
+              <div class="location-item"><div class="location-item-icon"><i class="fas fa-landmark"></i></div><div><div class="location-item-label">Referencia</div><div class="location-item-value" data-cfg="referencia">Frente al Museo Pumapungo</div></div></div>
+              <div class="location-item"><div class="location-item-icon"><i class="fas fa-clock"></i></div><div><div class="location-item-label">Horarios</div><div class="location-item-value" data-cfg="horarios">09:00–13:00 · 15:00–18:00</div></div></div>
+              <div class="location-item"><div class="location-item-icon"><i class="fas fa-phone"></i></div><div><div class="location-item-label">Teléfono</div><div class="location-item-value"><a href="#" data-href="telefono" style="color:inherit" data-cfg="telefono">+593 00 000 0000</a></div></div></div>
+            </div>
+            <a href="#" data-href="mapa" class="directions-btn"><i class="fas fa-diamond-turn-right"></i> Cómo llegar en Google Maps</a>
+          </div>
+        </div>
+        <div class="map-container fade-in">
+          <iframe data-mapa-embed title="Ubicación de Auditsa en Google Maps" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.4906956019!2d-78.99776!3d-2.90191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd18040b770689%3A0x84f0fcd3a1bcc25c!2sMuseo+Pumapungo!5e0!3m2!1ses!2sec!4v1700000000000!5m2!1ses!2sec"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header section-header--center fade-up"><span class="section-label">Cómo llegar</span><h2>Indicaciones para encontrarnos</h2><div class="divider"></div><p>Estamos ubicados en el Centro Histórico de Cuenca, una zona de fácil acceso.</p></div>
+      <div class="directions-grid">
+        <div class="direction-card fade-up" data-delay="0"><div class="direction-icon">🚗</div><h4>En vehículo propio</h4><p>Diríjase al Centro Histórico por la Av. Huayna Cápac. Hay parqueaderos públicos cerca del Museo Pumapungo.</p></div>
+        <div class="direction-card fade-up" data-delay="100"><div class="direction-icon">🚌</div><h4>En transporte público</h4><p>Varias líneas del sistema integrado de Cuenca tienen paradas cercanas al sector de la Calle Larga y Huayna Cápac.</p></div>
+        <div class="direction-card fade-up" data-delay="200"><div class="direction-icon">🚶</div><h4>A pie</h4><p>Camine por la Calle Larga hacia el este hasta llegar a la intersección con Huayna Cápac. Frente al Museo Pumapungo.</p></div>
+        <div class="direction-card fade-up" data-delay="300"><div class="direction-icon">🏛️</div><h4>Referencia principal</h4><p>Frente a la puerta principal del <strong>Museo Pumapungo</strong>, uno de los museos más representativos de Cuenca.</p></div>
+        <div class="direction-card fade-up" data-delay="400"><div class="direction-icon">📍</div><h4>Sector histórico</h4><p>Estamos cerca del río Tomebamba y la zona arqueológica Pumapungo, en el corazón de Cuenca.</p></div>
+        <div class="direction-card fade-up" data-delay="500"><div class="direction-icon">📞</div><h4>¿Te perdiste?</h4><p>Llámanos o escríbenos por WhatsApp y te orientamos en tiempo real hasta el consultorio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:560px;margin:0 auto">
+      <div class="section-header section-header--center fade-up"><span class="section-label">Horarios</span><h2>Horarios de atención</h2><div class="divider"></div></div>
+      <div class="hours-card fade-up" data-delay="100">
+        <div class="hours-card-header"><h3><i class="fas fa-clock" style="margin-right:10px;color:var(--purple-light)"></i>Atendemos</h3></div>
+        <div class="hours-table">
+          <div class="hours-row"><span class="hours-day">Lunes</span><span class="hours-time" data-cfg="horarios">09:00–13:00 · 15:00–18:00</span></div>
+          <div class="hours-row"><span class="hours-day">Martes</span><span class="hours-time" data-cfg="horarios">09:00–13:00 · 15:00–18:00</span></div>
+          <div class="hours-row"><span class="hours-day">Miércoles</span><span class="hours-time" data-cfg="horarios">09:00–13:00 · 15:00–18:00</span></div>
+          <div class="hours-row"><span class="hours-day">Jueves</span><span class="hours-time" data-cfg="horarios">09:00–13:00 · 15:00–18:00</span></div>
+          <div class="hours-row"><span class="hours-day">Viernes</span><span class="hours-time" data-cfg="horarios">09:00–13:00 · 15:00–18:00</span></div>
+          <div class="hours-row"><span class="hours-day">Sábado</span><span class="hours-closed">Cerrado</span></div>
+          <div class="hours-row"><span class="hours-day">Domingo</span><span class="hours-closed">Cerrado</span></div>
+        </div>
+        <div class="note-box"><i class="fas fa-info-circle" style="color:var(--purple);margin-right:8px"></i>Para citas fuera del horario habitual, contáctenos previamente.</div>
+      </div>
+      <div style="text-align:center;margin-top:32px" class="fade-up" data-delay="200">
+        <a href="contacto.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Agendar mi cita</a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" style="display:inline-flex;margin-bottom:0">
+            <img data-logo="footer" class="footer-logo-img" src="assets/BLANCO_2.png" alt="Auditsa Consultorios Auditivos"  style="width: 200px; height: auto;"/>
+          </a>
+          <p class="footer-desc">En Auditsa nos especializamos en el cuidado integral de la salud auditiva. Sabemos que escuchar bien es vivir mejor.</p>
+          <div class="footer-socials">
+            <a href="#" data-href="whatsapp" data-red="whatsapp" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" data-href="facebook" data-red="facebook" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" data-href="instagram" data-red="instagram" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h5>Navegación</h5><ul class="footer-links"><li><a href="index.html">Inicio</a></li><li><a href="sobre.html">Sobre nosotros</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="productos.html">Productos</a></li><li><a href="ubicacion.html">Ubicación</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+        <div class="footer-col"><h5>Servicios</h5><ul class="footer-links"><li><a href="servicios.html">Limpieza de oídos</a></li><li><a href="servicios.html">Evaluación auditiva</a></li><li><a href="servicios.html">Adaptación audífonos</a></li><li><a href="servicios.html">Calibración</a></li><li><a href="productos.html">Venta audífonos</a></li><li><a href="productos.html">Pilas y accesorios</a></li></ul></div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span data-cfg="calle">Calle Larga y Huayna Cápac</span></div>
+          <div class="footer-contact-item"><i class="fas fa-landmark"></i><span data-cfg="referencia">Frente al Museo Pumapungo</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="#" data-href="telefono" style="color:inherit"><span data-cfg="telefono">+593 00 000 0000</span></a></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="#" data-href="email" style="color:inherit"><span data-cfg="email">info@auditsa.ec</span></a></div>
+          <div class="footer-hours"><p><strong data-cfg="dias">Lunes a Viernes</strong></p><p data-cfg="horarios">09:00–13:00 · 15:00–18:00</p></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span data-cfg="copyright">© 2025 Auditsa Consultorios Auditivos. Todos los derechos reservados.</span><span>Cuenca, Ecuador 🇪🇨</span></div>
+    </div>
+  </footer>
+  <a href="#" class="whatsapp-float" aria-label="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="script.js"></script>
+  <script src="config.js"></script>
+
+</body>
+</html>

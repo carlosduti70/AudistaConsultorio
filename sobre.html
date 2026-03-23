@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conoce a la profesional detrás de Auditsa, fonoaudióloga especializada en salud auditiva en Cuenca, Ecuador." />
+  <title>Sobre Nosotros | Auditsa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+.profile-section{padding:90px 0;}
+.profile-inner{display:grid;grid-template-columns:400px 1fr;gap:72px;align-items:start;}
+.profile-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);position:sticky;top:calc(var(--nav-height) + 24px);}
+.profile-photo-area{background:linear-gradient(160deg,var(--black) 0%,var(--purple-deeper) 100%);height:300px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.profile-photo-area::before{content:'';position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(155,47,142,.15);}
+.profile-avatar{width:130px;height:130px;border-radius:50%;background:rgba(155,47,142,.2);border:4px solid rgba(155,47,142,.4);display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;z-index:1;}
+.profile-info{padding:28px;}
+.profile-name{font-family:var(--font-display);font-size:1.4rem;color:var(--black);margin-bottom:4px;}
+.profile-title{color:var(--purple);font-size:.9rem;font-weight:600;margin-bottom:20px;}
+.profile-meta{display:flex;flex-direction:column;gap:12px;}
+.profile-meta-item{display:flex;align-items:flex-start;gap:12px;font-size:.88rem;}
+.profile-meta-item i{color:var(--purple);width:16px;margin-top:2px;flex-shrink:0;}
+.profile-meta-item span{color:var(--gray-800);}
+.profile-tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--gray-100);}
+.profile-tag{background:var(--purple-pale);color:var(--purple);padding:5px 12px;border-radius:50px;font-size:.78rem;font-weight:600;}
+.bio-section{margin-bottom:44px;}
+.bio-content h3{font-size:1.3rem;margin-bottom:12px;color:var(--black);}
+.bio-content p{color:var(--gray-800);line-height:1.8;}
+.timeline{display:flex;flex-direction:column;gap:0;}
+.timeline-item{display:flex;gap:20px;padding-bottom:32px;position:relative;}
+.timeline-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:42px;bottom:0;width:2px;background:var(--gray-100);}
+.timeline-dot{width:40px;height:40px;border-radius:50%;background:var(--purple-pale);border:3px solid var(--purple);display:flex;align-items:center;justify-content:center;color:var(--purple);font-size:.9rem;flex-shrink:0;z-index:1;}
+.timeline-year{font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--purple);text-transform:uppercase;margin-bottom:4px;}
+.timeline-title{font-family:var(--font-display);font-size:1rem;color:var(--black);margin-bottom:4px;}
+.timeline-sub{font-size:.88rem;color:var(--gray-600);}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.value-card{background:var(--white);border-radius:var(--radius-md);padding:32px 24px;text-align:center;border:1px solid var(--gray-100);box-shadow:var(--shadow-sm);transition:all var(--transition);}
+.value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--purple);}
+.value-icon{font-size:2rem;margin-bottom:16px;display:block;}
+.value-card h4{margin-bottom:8px;}
+.value-card p{font-size:.88rem;color:var(--gray-600);margin:0;}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.mv-card{padding:40px;border-radius:var(--radius-md);position:relative;overflow:hidden;}
+.mv-card--mission{background:linear-gradient(135deg,var(--black),#1e0a1c);}
+.mv-card--vision{background:linear-gradient(135deg,var(--purple),var(--purple-light));}
+.mv-card h3{color:white;margin-bottom:16px;}
+.mv-card p{color:rgba(255,255,255,.8);font-size:1rem;line-height:1.75;margin:0;}
+.mv-card .mv-icon{position:absolute;bottom:-20px;right:-20px;font-size:8rem;opacity:.06;color:white;}
+@media(max-width:900px){.profile-inner{grid-template-columns:1fr;}.profile-card{position:static;max-width:400px;margin:0 auto;}.values-grid{grid-template-columns:1fr 1fr;}.mv-grid{grid-template-columns:1fr;}}
+@media(max-width:580px){.values-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Auditsa – Inicio">
+        <img data-logo="navbar" src="assets/MORADO_2.png" alt="Auditsa Consultorios Auditivos"  style="width: 200px; height: auto;"/>
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ubicacion.html">Ubicación</a></li>
+        <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Miga de pan"><a href="index.html">Inicio</a><i class="fas fa-chevron-right"></i><span>Sobre nosotros</span></nav>
+      <h1>Sobre nosotros</h1>
+      <p>Conoce a la profesional y el compromiso detrás de Auditsa.</p>
+    </div>
+  </section>
+
+  <section class="profile-section" aria-labelledby="profile-heading">
+    <div class="container">
+      <div class="profile-inner">
+        <div class="fade-in">
+          <div class="profile-card">
+            <div class="profile-photo-area"><div class="profile-avatar" aria-hidden="true">👩‍⚕️</div></div>
+            <div class="profile-info">
+              <div class="profile-name">Especialista en Salud Auditiva</div>
+              <div class="profile-title">Fonoaudióloga · Auditsa</div>
+              <div class="profile-meta">
+                <div class="profile-meta-item"><i class="fas fa-map-marker-alt"></i><span>Cuenca, Ecuador</span></div>
+                <div class="profile-meta-item"><i class="fas fa-graduation-cap"></i><span>Fonoaudióloga certificada, especialización en audiología</span></div>
+                <div class="profile-meta-item"><i class="fas fa-briefcase"></i><span>Más de 10 años de experiencia clínica</span></div>
+                <div class="profile-meta-item"><i class="fas fa-stethoscope"></i><span>Especializada en adaptación de audífonos y evaluación auditiva</span></div>
+              </div>
+              <div class="profile-tag-list">
+                <span class="profile-tag">Audiología</span><span class="profile-tag">Fonoaudiología</span>
+                <span class="profile-tag">Audífonos</span><span class="profile-tag">Diagnóstico</span>
+                <span class="profile-tag">Rehabilitación</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="bio-section fade-up">
+            <span class="section-label">La profesional</span>
+            <h2 id="profile-heading">Dedicada al bienestar auditivo de cada paciente</h2>
+            <div class="divider" style="margin-bottom:24px"></div>
+            <p class="bio-content">En Auditsa, la atención de cada paciente es nuestra prioridad absoluta. Nuestra fonoaudióloga cuenta con sólida formación académica y años de experiencia práctica en el diagnóstico y tratamiento de condiciones auditivas.</p>
+            <p class="bio-content">Sabemos que la pérdida auditiva afecta profundamente la calidad de vida. Por eso, ofrecemos no solo soluciones técnicas, sino también un acompañamiento humano, empático y continuo a cada persona que visita nuestro consultorio.</p>
+          </div>
+          <div class="bio-section fade-up" data-delay="100">
+            <h3><i class="fas fa-graduation-cap" style="color:var(--purple);margin-right:10px"></i>Formación académica</h3>
+            <div class="timeline">
+              <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-university"></i></div><div><div class="timeline-year">Pregrado</div><div class="timeline-title">Licenciatura en Fonoaudiología</div><div class="timeline-sub">Universidad de Cuenca · Cuenca, Ecuador</div></div></div>
+              <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-award"></i></div><div><div class="timeline-year">Especialización</div><div class="timeline-title">Especialización en Audiología Clínica</div><div class="timeline-sub">Formación avanzada en diagnóstico y rehabilitación auditiva</div></div></div>
+              <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-certificate"></i></div><div><div class="timeline-year">Certificaciones</div><div class="timeline-title">Adaptación de Auxiliares Auditivos</div><div class="timeline-sub">Formación continua con principales fabricantes de audífonos</div></div></div>
+            </div>
+          </div>
+          <div class="bio-section fade-up" data-delay="200">
+            <h3><i class="fas fa-briefcase" style="color:var(--purple);margin-right:10px"></i>Experiencia profesional</h3>
+            <div class="timeline">
+              <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-clinic-medical"></i></div><div><div class="timeline-year">Actual</div><div class="timeline-title">Directora y Fonoaudióloga — Auditsa</div><div class="timeline-sub">Cuenca, Ecuador · Consultorio especializado en salud auditiva</div></div></div>
+              <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-hospital"></i></div><div><div class="timeline-year">Experiencia previa</div><div class="timeline-title">Atención clínica en audiología</div><div class="timeline-sub">Evaluación, diagnóstico y rehabilitación auditiva en centros de salud</div></div></div>
+              <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-people-group"></i></div><div><div class="timeline-year">Comunidad</div><div class="timeline-title">Atención a pacientes de toda la región</div><div class="timeline-sub">Cuenca y sectores aledaños · Ecuador</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray" aria-labelledby="values-heading">
+    <div class="container">
+      <div class="section-header section-header--center fade-up"><span class="section-label">Lo que nos guía</span><h2 id="values-heading">Nuestros valores</h2><div class="divider"></div></div>
+      <div class="values-grid">
+        <article class="value-card fade-up" data-delay="0"><span class="value-icon">❤️</span><h4>Compromiso humano</h4><p>Cada paciente es una persona, no un número. Brindamos atención cálida y empática.</p></article>
+        <article class="value-card fade-up" data-delay="100"><span class="value-icon">🔬</span><h4>Excelencia técnica</h4><p>Utilizamos tecnología actualizada y nos formamos continuamente para ofrecer el mejor diagnóstico.</p></article>
+        <article class="value-card fade-up" data-delay="200"><span class="value-icon">🤝</span><h4>Confianza</h4><p>Construimos relaciones basadas en la honestidad, transparencia y respeto mutuo.</p></article>
+        <article class="value-card fade-up" data-delay="300"><span class="value-icon">♿</span><h4>Accesibilidad</h4><p>Trabajamos para que la salud auditiva de calidad sea accesible para todos los pacientes.</p></article>
+        <article class="value-card fade-up" data-delay="400"><span class="value-icon">🌱</span><h4>Mejora continua</h4><p>Nos actualizamos constantemente en técnicas, equipos y conocimientos para servir mejor.</p></article>
+        <article class="value-card fade-up" data-delay="500"><span class="value-icon">🎯</span><h4>Resultados reales</h4><p>Nuestro objetivo es la mejora tangible en la calidad de vida auditiva de cada paciente.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="mv-heading">
+    <div class="container">
+      <div class="section-header section-header--center fade-up" style="margin-bottom:40px"><span class="section-label">Nuestra identidad</span><h2 id="mv-heading">Misión y Visión</h2><div class="divider"></div></div>
+      <div class="mv-grid">
+        <div class="mv-card mv-card--mission fade-up" data-delay="0"><span class="section-label" style="color:var(--purple-light)">Misión</span><h3>¿Qué hacemos?</h3><p>Brindar atención especializada en salud auditiva con tecnología de vanguardia, acompañando a cada paciente desde la evaluación hasta la recuperación y adaptación, mejorando su calidad de vida.</p><i class="fas fa-ear-listen mv-icon"></i></div>
+        <div class="mv-card mv-card--vision fade-up" data-delay="150"><span class="section-label" style="color:rgba(255,255,255,.7)">Visión</span><h3>¿Hacia dónde vamos?</h3><p>Ser el referente de salud auditiva en Cuenca y la región austral del Ecuador, reconocidos por nuestra calidad humana, excelencia clínica y el impacto positivo en la vida de nuestros pacientes.</p><i class="fas fa-eye mv-icon"></i></div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" style="display:inline-flex;margin-bottom:0">
+            <img data-logo="footer" class="footer-logo-img" src="assets/BLANCO_2.png" alt="Auditsa Consultorios Auditivos"  style="width: 200px; height: auto;"/>
+          </a>
+          <p class="footer-desc">En Auditsa nos especializamos en el cuidado integral de la salud auditiva. Sabemos que escuchar bien es vivir mejor.</p>
+          <div class="footer-socials">
+            <a href="#" data-href="whatsapp" data-red="whatsapp" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" data-href="facebook" data-red="facebook" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" data-href="instagram" data-red="instagram" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre.html">Sobre nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <ul class="footer-links">
+            <li><a href="servicios.html">Limpieza de oídos</a></li>
+            <li><a href="servicios.html">Evaluación auditiva</a></li>
+            <li><a href="servicios.html">Adaptación audífonos</a></li>
+            <li><a href="servicios.html">Calibración</a></li>
+            <li><a href="productos.html">Venta audífonos</a></li>
+            <li><a href="productos.html">Pilas y accesorios</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span data-cfg="calle">Calle Larga y Huayna Cápac</span></div>
+          <div class="footer-contact-item"><i class="fas fa-landmark"></i><span data-cfg="referencia">Frente al Museo Pumapungo</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="#" data-href="telefono" style="color:inherit"><span data-cfg="telefono">+593 00 000 0000</span></a></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="#" data-href="email" style="color:inherit"><span data-cfg="email">info@auditsa.ec</span></a></div>
+          <div class="footer-hours"><p><strong data-cfg="dias">Lunes a Viernes</strong></p><p data-cfg="horarios">09:00–13:00 · 15:00–18:00</p></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-cfg="copyright">© 2025 Auditsa Consultorios Auditivos. Todos los derechos reservados.</span>
+        <span>Cuenca, Ecuador 🇪🇨</span>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="whatsapp-float" aria-label="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="script.js"></script>
+  <script src="config.js"></script>
+</body>
+</html>

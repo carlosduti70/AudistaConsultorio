@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Auditsa Consultorios Auditivos – Cuenca, Ecuador. Evaluación auditiva, audífonos, limpieza de oídos y más." />
+  <title>Auditsa | Consultorios Auditivos – Cuenca, Ecuador</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--black) 0%, #1e0a1c 50%, var(--purple-deeper) 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--nav-height);
+    }
+
+    .hero-bg-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .shape-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(155, 47, 142, 0.07);
+    }
+
+    .shape-1 {
+      width: 600px;
+      height: 600px;
+      top: -150px;
+      right: -100px;
+    }
+
+    .shape-2 {
+      width: 350px;
+      height: 350px;
+      bottom: -80px;
+      left: -60px;
+    }
+
+    .shape-3 {
+      width: 200px;
+      height: 200px;
+      top: 50%;
+      right: 30%;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .wave-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      padding: 80px 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(155, 47, 142, 0.2);
+      border: 1px solid rgba(155, 47, 142, 0.4);
+      color: var(--purple-light);
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      color: white;
+      margin-bottom: 22px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--purple-light);
+    }
+
+    .hero-desc {
+      color: rgba(255, 255, 255, .68);
+      font-size: 1.1rem;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(155, 47, 142, .25);
+    }
+
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .45);
+      margin-top: 4px;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-card-main {
+      background: rgba(155, 47, 142, .1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(155, 47, 142, .25);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .ear-icon-large {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: white;
+      margin: 0 auto 24px;
+      box-shadow: 0 12px 40px rgba(155, 47, 142, .5);
+    }
+
+    .hero-card-main h3 {
+      color: white;
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-main p {
+      color: rgba(255, 255, 255, .55);
+      text-align: center;
+      font-size: .9rem;
+      margin-bottom: 24px;
+    }
+
+    .service-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .service-pill {
+      background: rgba(155, 47, 142, .2);
+      border: 1px solid rgba(155, 47, 142, .3);
+      color: rgba(255, 255, 255, .8);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: .8rem;
+    }
+
+    .floating-badge {
+      position: absolute;
+      background: white;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--black);
+      white-space: nowrap;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-badge i {
+      color: var(--purple);
+    }
+
+    .badge-top {
+      top: -20px;
+      right: -30px;
+      animation-delay: 0s;
+    }
+
+    .badge-bottom {
+      bottom: -20px;
+      left: -30px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+      border: 1px solid var(--gray-100);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--purple-light));
+      transform: scaleX(0);
+      transition: transform var(--transition);
+      transform-origin: left;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--purple-pale);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--purple);
+      margin-bottom: 20px;
+      transition: all var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--purple);
+      color: white;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: .9rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+
+    .service-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--purple);
+      font-size: .85rem;
+      font-weight: 600;
+      margin-top: 16px;
+      transition: gap var(--transition);
+    }
+
+    .service-card:hover .service-card-link {
+      gap: 10px;
+    }
+
+    .why-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .why-visual {
+      position: relative;
+    }
+
+    .why-image-box {
+      background: linear-gradient(135deg, var(--purple-pale), var(--gray-100));
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-image-box::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(155, 47, 142, .08));
+    }
+
+    .why-stat-card {
+      position: absolute;
+      background: white;
+      border-radius: 14px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .why-stat-card.card-1 {
+      bottom: -20px;
+      right: -20px;
+    }
+
+    .why-stat-card.card-2 {
+      top: -20px;
+      left: -20px;
+    }
+
+    .why-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--purple);
+      line-height: 1;
+    }
+
+    .why-stat-text {
+      font-size: .78rem;
+      color: var(--gray-600);
+      margin-top: 2px;
+    }
+
+    .why-features {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .why-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .why-feature-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--purple-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--purple);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .why-feature h4 {
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .why-feature p {
+      font-size: .88rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--black) 0%, #2a0d27 60%, var(--purple-deeper) 100%);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(155, 47, 142, .08);
+    }
+
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      color: rgba(255, 255, 255, .65);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hours-strip {
+      background: var(--purple-pale);
+      padding: 28px 0;
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .hours-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hours-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hours-item i {
+      color: var(--purple);
+      font-size: 1.2rem;
+    }
+
+    .hours-item strong {
+      color: var(--black);
+      font-size: .95rem;
+    }
+
+    .hours-item span {
+      color: var(--gray-600);
+      font-size: .9rem;
+    }
+
+    .hours-sep {
+      width: 1px;
+      height: 36px;
+      background: var(--gray-200);
+    }
+
+    @media(max-width:900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-ctas {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .why-visual {
+        display: none;
+      }
+    }
+
+    @media(max-width:600px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hours-inner {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hours-sep {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Auditsa – Inicio">
+        <img data-logo="navbar" src="assets/MORADO_2.png" alt="Auditsa Consultorios Auditivos"
+          style="width: 200px; height: auto;" />
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ubicacion.html">Ubicación</a></li>
+        <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="hero" aria-label="Presentación principal">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="shape-circle shape-1"></div>
+      <div class="shape-circle shape-2"></div>
+      <div class="shape-circle shape-3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fas fa-map-marker-alt"></i> Cuenca, Ecuador</div>
+          <h1>Escuchar bien es <em>vivir mejor</em></h1>
+          <p class="hero-desc">En Auditsa nos especializamos en el cuidado integral de la salud auditiva. Atención
+            personalizada, tecnología de vanguardia y soluciones adaptadas a cada paciente.</p>
+          <div class="hero-ctas">
+            <a href="contacto.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Agendar cita</a>
+            <a href="servicios.html" class="btn btn-outline"><i class="fas fa-stethoscope"></i> Nuestros servicios</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num stat-number" data-target="500" data-suffix="+">0+</div>
+              <div class="hero-stat-label">Pacientes atendidos</div>
+            </div>
+            <div>
+              <div class="hero-stat-num stat-number" data-target="10" data-suffix="+ años">0</div>
+              <div class="hero-stat-label">De experiencia</div>
+            </div>
+            <div>
+              <div class="hero-stat-num stat-number" data-target="100" data-suffix="%">0%</div>
+              <div class="hero-stat-label">Compromiso personal</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card-main">
+            <div class="ear-icon-large"><i class="fas fa-ear-listen"></i></div>
+            <h3>Tu audición, nuestra prioridad</h3>
+            <p>Evaluamos, diagnosticamos y tratamos con tecnología actualizada.</p>
+            <div class="service-pills">
+              <span class="service-pill">🔬 Evaluación</span>
+              <span class="service-pill">🦻 Audífonos</span>
+              <span class="service-pill">✨ Limpieza</span>
+              <span class="service-pill">🔧 Calibración</span>
+            </div>
+          </div>
+          <div class="floating-badge badge-top"><i class="fas fa-shield-halved"></i> Atención especializada</div>
+          <div class="floating-badge badge-bottom"><i class="fas fa-clock"></i> Lun – Vie · 9h–18h</div>
+        </div>
+      </div>
+    </div>
+    <svg class="wave-bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,60 C360,0 1080,60 1440,20 L1440,60 Z" fill="#ffffff" />
+    </svg>
+  </section>
+
+  <div class="hours-strip" role="complementary" aria-label="Horarios de atención">
+    <div class="container">
+      <div class="hours-inner">
+        <div class="hours-item"><i class="fas fa-clock"></i>
+          <div><strong>Horario</strong><br><span data-cfg="dias">Lunes a Viernes</span></div>
+        </div>
+        <div class="hours-sep"></div>
+        <div class="hours-item"><i class="fas fa-sun"></i>
+          <div><strong>Mañana</strong><br><span data-cfg="horarioManana">09:00 – 13:00</span></div>
+        </div>
+        <div class="hours-sep"></div>
+        <div class="hours-item"><i class="fas fa-moon"></i>
+          <div><strong>Tarde</strong><br><span data-cfg="horarioTarde">15:00 – 18:00</span></div>
+        </div>
+        <div class="hours-sep"></div>
+        <div class="hours-item"><i class="fas fa-map-marker-alt"></i>
+          <div><strong>Ubicación</strong><br><span data-cfg="calle">Calle Larga y Huayna Cápac</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header section-header--center fade-up">
+        <span class="section-label">¿Qué ofrecemos?</span>
+        <h2 id="services-heading">Nuestros servicios especializados</h2>
+        <div class="divider"></div>
+        <p>Soluciones integrales para el cuidado de tu salud auditiva, con la mejor tecnología y atención personalizada.
+        </p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card fade-up" data-delay="0">
+          <div class="service-icon"><i class="fas fa-ear-listen"></i></div>
+          <h3>Limpieza de oídos</h3>
+          <p>Procedimiento seguro y profesional para remover el cerumen acumulado y restaurar el bienestar auditivo.</p>
+          <a href="servicios.html" class="service-card-link">Ver detalle <i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article class="service-card fade-up" data-delay="100">
+          <div class="service-icon"><i class="fas fa-volume-high"></i></div>
+          <h3>Adaptación de audífonos</h3>
+          <p>Selección, ajuste y seguimiento personalizado de auxiliares auditivos para cada tipo de pérdida auditiva.
+          </p><a href="servicios.html" class="service-card-link">Ver detalle <i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article class="service-card fade-up" data-delay="200">
+          <div class="service-icon"><i class="fas fa-wrench"></i></div>
+          <h3>Calibración y mantenimiento</h3>
+          <p>Mantenimiento y calibración profesional de audífonos de todas las marcas y modelos del mercado.</p><a
+            href="servicios.html" class="service-card-link">Ver detalle <i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article class="service-card fade-up" data-delay="300">
+          <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+          <h3>Evaluación auditiva</h3>
+          <p>Diagnóstico completo del estado de tu audición con equipos de última generación y asesoría especializada.
+          </p><a href="servicios.html" class="service-card-link">Ver detalle <i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article class="service-card fade-up" data-delay="400">
+          <div class="service-icon"><i class="fas fa-pills"></i></div>
+          <h3>Audífonos medicados</h3>
+          <p>Venta de audífonos medicados para tratamiento de infecciones y condiciones auditivas específicas.</p><a
+            href="servicios.html" class="service-card-link">Ver detalle <i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article class="service-card fade-up" data-delay="500">
+          <div class="service-icon"><i class="fas fa-battery-full"></i></div>
+          <h3>Pilas y accesorios</h3>
+          <p>Amplia variedad de pilas para todo tipo de audífono y kits de limpieza para un mantenimiento óptimo.</p><a
+            href="productos.html" class="service-card-link">Ver productos <i class="fas fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="why-inner">
+        <div class="why-visual fade-in">
+          <div class="why-image-box">🦻</div>
+          <div class="why-stat-card card-1">
+            <div class="why-stat-num">100%</div>
+            <div class="why-stat-text">Atención personalizada</div>
+          </div>
+          <div class="why-stat-card card-2">
+            <div class="why-stat-num">Todas</div>
+            <div class="why-stat-text">las marcas de audífonos</div>
+          </div>
+        </div>
+        <div>
+          <div class="section-header fade-up">
+            <span class="section-label">¿Por qué elegirnos?</span>
+            <h2 id="why-heading">Tu bienestar auditivo en manos expertas</h2>
+            <div class="divider"></div>
+            <p>Te acompañamos en cada paso, desde la evaluación hasta el seguimiento continuo.</p>
+          </div>
+          <div class="why-features">
+            <div class="why-feature fade-up" data-delay="0">
+              <div class="why-feature-icon"><i class="fas fa-user-doctor"></i></div>
+              <div>
+                <h4>Profesional especializada</h4>
+                <p>Fonoaudióloga certificada con amplia formación en salud auditiva.</p>
+              </div>
+            </div>
+            <div class="why-feature fade-up" data-delay="100">
+              <div class="why-feature-icon"><i class="fas fa-microchip"></i></div>
+              <div>
+                <h4>Tecnología de vanguardia</h4>
+                <p>Equipos modernos y actualizados para diagnóstico y tratamiento preciso.</p>
+              </div>
+            </div>
+            <div class="why-feature fade-up" data-delay="200">
+              <div class="why-feature-icon"><i class="fas fa-heart"></i></div>
+              <div>
+                <h4>Atención cálida y personalizada</h4>
+                <p>Cada paciente recibe un plan individual adaptado a sus necesidades.</p>
+              </div>
+            </div>
+            <div class="why-feature fade-up" data-delay="300">
+              <div class="why-feature-icon"><i class="fas fa-rotate"></i></div>
+              <div>
+                <h4>Seguimiento continuo</h4>
+                <p>Acompañamos durante todo el proceso de adaptación y recuperación.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:36px" class="fade-up" data-delay="400"><a href="sobre.html"
+              class="btn btn-primary">Conoce más sobre nosotros <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container" style="position:relative;z-index:2">
+      <span class="section-label" style="color:var(--purple-light)">¿Listo para mejorar tu audición?</span>
+      <h2 id="cta-heading">Agenda tu cita hoy</h2>
+      <p>Atendemos a pacientes de Cuenca y sectores aledaños. Tu primera consulta incluye una evaluación personalizada.
+      </p>
+      <div class="cta-btns">
+        <a href="#" data-href="whatsapp" class="btn btn-white"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="contacto.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Formulario de contacto</a>
+        <a href="ubicacion.html" class="btn btn-outline"><i class="fas fa-map-marker-alt"></i> Cómo llegar</a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" style="display:inline-flex;margin-bottom:0">
+            <img data-logo="footer" class="footer-logo-img" src="assets/BLANCO_2.png"
+              alt="Auditsa Consultorios Auditivos" style="width: 200px; height: auto;"/>
+          </a>
+          <p class="footer-desc">En Auditsa nos especializamos en el cuidado integral de la salud auditiva. Sabemos que
+            escuchar bien es vivir mejor.</p>
+          <div class="footer-socials">
+            <a href="#" data-href="whatsapp" data-red="whatsapp" class="footer-social-link" aria-label="WhatsApp"><i
+                class="fab fa-whatsapp"></i></a>
+            <a href="#" data-href="facebook" data-red="facebook" class="footer-social-link" aria-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="#" data-href="instagram" data-red="instagram" class="footer-social-link" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre.html">Sobre nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <ul class="footer-links">
+            <li><a href="servicios.html">Limpieza de oídos</a></li>
+            <li><a href="servicios.html">Evaluación auditiva</a></li>
+            <li><a href="servicios.html">Adaptación audífonos</a></li>
+            <li><a href="servicios.html">Calibración</a></li>
+            <li><a href="productos.html">Venta audífonos</a></li>
+            <li><a href="productos.html">Pilas y accesorios</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span data-cfg="calle">Calle Larga y
+              Huayna Cápac</span></div>
+          <div class="footer-contact-item"><i class="fas fa-landmark"></i><span data-cfg="referencia">Frente al Museo
+              Pumapungo</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="#" data-href="telefono"
+              style="color:inherit"><span data-cfg="telefono">+593 00 000 0000</span></a></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="#" data-href="email"
+              style="color:inherit"><span data-cfg="email">info@auditsa.ec</span></a></div>
+          <div class="footer-hours">
+            <p><strong data-cfg="dias">Lunes a Viernes</strong></p>
+            <p data-cfg="horarios">09:00–13:00 · 15:00–18:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-cfg="copyright">© 2025 Auditsa Consultorios Auditivos. Todos los derechos reservados.</span>
+        <span>Cuenca, Ecuador 🇪🇨</span>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="whatsapp-float" aria-label="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="script.js"></script>
+  <script src="config.js"></script>
+</body>
+
+</html>

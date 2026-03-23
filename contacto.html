@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contacta con Auditsa: formulario, teléfono, WhatsApp, correo y redes sociales. Agenda tu cita en Cuenca, Ecuador." />
+  <title>Contacto | Auditsa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+.contact-section{padding:90px 0;}
+.contact-inner{display:grid;grid-template-columns:420px 1fr;gap:56px;align-items:start;}
+.contact-side{display:flex;flex-direction:column;gap:20px;}
+.contact-info-card{background:white;border-radius:var(--radius-md);padding:28px;box-shadow:var(--shadow-sm);border:1px solid var(--gray-100);}
+.contact-info-card h4{font-size:1rem;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.contact-info-card h4 i{color:var(--purple);}
+.contact-line{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--gray-100);transition:all var(--transition);}
+.contact-line:last-child{border-bottom:none;padding-bottom:0;}
+a.contact-line:hover{color:var(--purple);}
+.contact-line-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;background:var(--purple-pale);color:var(--purple);transition:all var(--transition);}
+a.contact-line:hover .contact-line-icon{background:var(--purple);color:white;}
+.contact-line-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-600);margin-bottom:4px;}
+.contact-line-value{font-size:.92rem;color:var(--black);font-weight:500;}
+.social-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.social-btn{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 12px;border-radius:var(--radius-md);font-weight:600;font-size:.78rem;transition:all var(--transition);border:2px solid transparent;}
+.social-btn i{font-size:1.5rem;}
+.social-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.social-wa{background:#e7faf0;color:#1a7a40;border-color:#c3f0d5;}
+.social-wa:hover{background:#25D366;color:white;border-color:#25D366;}
+.social-fb{background:#e8f0ff;color:#1877f2;border-color:#c4d8fb;}
+.social-fb:hover{background:#1877f2;color:white;border-color:#1877f2;}
+.social-ig{background:#fff0f6;color:#e1306c;border-color:#fbbcd7;}
+.social-ig:hover{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;border-color:transparent;}
+.contact-form-card{background:white;border-radius:var(--radius-lg);padding:44px;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);}
+.form-header{margin-bottom:36px;}
+.form-header h3{font-size:1.5rem;margin-bottom:6px;}
+.form-header p{color:var(--gray-600);font-size:.95rem;margin:0;}
+.form-group{margin-bottom:22px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-800);margin-bottom:8px;}
+label span{color:var(--purple);}
+input,select,textarea{width:100%;padding:13px 16px;border:2px solid var(--gray-100);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.95rem;color:var(--text-dark);background:var(--off-white);transition:all var(--transition);outline:none;resize:none;}
+input:focus,select:focus,textarea:focus{border-color:var(--purple);background:white;box-shadow:0 0 0 4px rgba(155,47,142,.08);}
+input.error,textarea.error{border-color:#e53e3e;background:#fff5f5;}
+.field-error{font-size:.78rem;color:#e53e3e;margin-top:5px;display:block;min-height:18px;}
+textarea{min-height:130px;}
+.form-submit{margin-top:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.form-submit .btn-primary{padding:16px 36px;font-size:1rem;}
+.form-note{font-size:.8rem;color:var(--gray-600);}
+.form-note i{color:var(--purple);margin-right:4px;}
+.faq-list{display:flex;flex-direction:column;gap:12px;}
+.faq-item{background:white;border-radius:var(--radius-md);border:1px solid var(--gray-100);overflow:hidden;}
+.faq-question{width:100%;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:.95rem;color:var(--black);background:none;text-align:left;cursor:pointer;transition:background var(--transition);}
+.faq-question:hover{background:var(--purple-pale);}
+.faq-question i{color:var(--purple);transition:transform var(--transition);flex-shrink:0;margin-left:12px;}
+.faq-item.open .faq-question i{transform:rotate(180deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;}
+.faq-item.open .faq-answer{max-height:300px;}
+.faq-answer-inner{padding:0 22px 18px;font-size:.9rem;color:var(--gray-800);line-height:1.75;}
+@media(max-width:960px){.contact-inner{grid-template-columns:1fr;}.contact-side{order:2;}}
+@media(max-width:560px){.contact-form-card{padding:28px 22px;}.form-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Auditsa – Inicio">
+        <img data-logo="navbar" src="assets/MORADO_2.png" alt="Auditsa Consultorios Auditivos"  style="width: 200px; height: auto;"/>
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ubicacion.html">Ubicación</a></li>
+        <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Inicio</a><i class="fas fa-chevron-right"></i><span>Contacto</span></nav>
+      <h1>Contáctenos</h1>
+      <p>Estamos aquí para resolver tus dudas y agendar tu cita.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-form-card fade-up">
+          <div class="form-header">
+            <span class="section-label">Escríbenos</span>
+            <h3>Formulario de contacto</h3>
+            <p>Responderemos tu mensaje a la brevedad, generalmente dentro de 24 horas hábiles.</p>
+          </div>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group"><label for="name">Nombre completo <span>*</span></label><input type="text" id="name" name="name" placeholder="Tu nombre" autocomplete="name" /><span class="field-error" id="nameError"></span></div>
+              <div class="form-group"><label for="email">Correo electrónico <span>*</span></label><input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" /><span class="field-error" id="emailError"></span></div>
+            </div>
+            <div class="form-group"><label for="phone">Teléfono / WhatsApp</label><input type="tel" id="phone" name="phone" placeholder="+593 00 000 0000" autocomplete="tel" /></div>
+            <div class="form-group">
+              <label for="subject">Asunto <span>*</span></label>
+              <select id="subject" name="subject"><option value="">Seleccione un asunto…</option><option value="cita">Agendar una cita</option><option value="evaluacion">Evaluación auditiva</option><option value="audifonos">Información sobre audífonos</option><option value="limpieza">Limpieza de oídos</option><option value="calibracion">Calibración de audífono</option><option value="productos">Consulta sobre productos</option><option value="otro">Otro</option></select>
+              <span class="field-error" id="subjectError"></span>
+            </div>
+            <div class="form-group"><label for="message">Mensaje <span>*</span></label><textarea id="message" name="message" placeholder="Escribe aquí tu consulta o comentario…"></textarea><span class="field-error" id="messageError"></span></div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
+              <span class="form-note"><i class="fas fa-lock"></i> Tu información es confidencial.</span>
+            </div>
+          </form>
+        </div>
+        <div class="contact-side">
+          <div class="contact-info-card fade-up" data-delay="100">
+            <h4><i class="fas fa-address-book"></i> Contacto directo</h4>
+            <a href="#" data-href="telefono" class="contact-line"><div class="contact-line-icon"><i class="fas fa-phone"></i></div><div><div class="contact-line-label">Teléfono</div><div class="contact-line-value" data-cfg="telefono">+593 00 000 0000</div></div></a>
+            <a href="#" data-href="whatsapp" target="_blank" rel="noopener" class="contact-line"><div class="contact-line-icon" style="background:#e7faf0;color:#25D366"><i class="fab fa-whatsapp"></i></div><div><div class="contact-line-label">WhatsApp</div><div class="contact-line-value" data-cfg="whatsapp">+593 00 000 0000</div></div></a>
+            <a href="#" data-href="email" class="contact-line"><div class="contact-line-icon"><i class="fas fa-envelope"></i></div><div><div class="contact-line-label">Correo electrónico</div><div class="contact-line-value" data-cfg="email">info@auditsa.ec</div></div></a>
+          </div>
+          <div class="contact-info-card fade-up" data-delay="180">
+            <h4><i class="fas fa-map-marker-alt"></i> Dónde encontrarnos</h4>
+            <div class="contact-line"><div class="contact-line-icon"><i class="fas fa-building"></i></div><div><div class="contact-line-label">Dirección</div><div class="contact-line-value" data-cfg="calle">Calle Larga y Huayna Cápac</div></div></div>
+            <div class="contact-line"><div class="contact-line-icon"><i class="fas fa-landmark"></i></div><div><div class="contact-line-label">Referencia</div><div class="contact-line-value" data-cfg="referencia">Frente al Museo Pumapungo</div></div></div>
+            <div class="contact-line"><div class="contact-line-icon"><i class="fas fa-clock"></i></div><div><div class="contact-line-label">Horarios</div><div class="contact-line-value" data-cfg="horarios">09:00–13:00 · 15:00–18:00</div></div></div>
+            <a href="ubicacion.html" style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;color:var(--purple);font-weight:600;font-size:.88rem"><i class="fas fa-map"></i> Ver en el mapa</a>
+          </div>
+          <div class="contact-info-card fade-up" data-delay="260">
+            <h4><i class="fas fa-share-nodes"></i> Redes sociales</h4>
+            <div class="social-grid">
+              <a href="#" data-href="whatsapp" data-red="whatsapp" target="_blank" rel="noopener" class="social-btn social-wa"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+              <a href="#" data-href="facebook" data-red="facebook" target="_blank" rel="noopener" class="social-btn social-fb"><i class="fab fa-facebook-f"></i>Facebook</a>
+              <a href="#" data-href="instagram" data-red="instagram" target="_blank" rel="noopener" class="social-btn social-ig"><i class="fab fa-instagram"></i>Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray">
+    <div class="container" style="max-width:760px">
+      <div class="section-header section-header--center fade-up"><span class="section-label">Preguntas frecuentes</span><h2>¿Tienes dudas?</h2><div class="divider"></div></div>
+      <div class="faq-list fade-up" data-delay="100">
+        <div class="faq-item"><button class="faq-question" aria-expanded="false">¿Necesito cita previa para la consulta?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner">Sí, recomendamos agendar tu cita con anticipación. Puedes hacerlo por WhatsApp, teléfono o mediante el formulario de esta página.</div></div></div>
+        <div class="faq-item"><button class="faq-question" aria-expanded="false">¿Trabajan con todas las marcas de audífonos?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner">Sí. Ofrecemos calibración, limpieza y mantenimiento para audífonos de todas las marcas y modelos, sin importar dónde los hayas adquirido.</div></div></div>
+        <div class="faq-item"><button class="faq-question" aria-expanded="false">¿Cuánto dura una evaluación auditiva?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner">Una evaluación auditiva completa dura aproximadamente entre 45 y 60 minutos, incluyendo la anamnesis, pruebas y explicación de resultados.</div></div></div>
+        <div class="faq-item"><button class="faq-question" aria-expanded="false">¿Atienden a niños?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner">Sí, atendemos pacientes de todas las edades. Para los más pequeños contamos con protocolos especiales adaptados a su edad y nivel de cooperación.</div></div></div>
+        <div class="faq-item"><button class="faq-question" aria-expanded="false">¿Tienen estacionamiento cerca?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner">Existen parqueaderos públicos en las cercanías del Museo Pumapungo y a lo largo de la Calle Larga. También puede llegar en transporte público.</div></div></div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" style="display:inline-flex;margin-bottom:0">
+            <img data-logo="footer" class="footer-logo-img" src="assets/BLANCO_2.png" alt="Auditsa Consultorios Auditivos"  style="width: 200px; height: auto;"/>
+          </a>
+          <p class="footer-desc">En Auditsa nos especializamos en el cuidado integral de la salud auditiva. Sabemos que escuchar bien es vivir mejor.</p>
+          <div class="footer-socials">
+            <a href="#" data-href="whatsapp" data-red="whatsapp" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" data-href="facebook" data-red="facebook" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" data-href="instagram" data-red="instagram" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h5>Navegación</h5><ul class="footer-links"><li><a href="index.html">Inicio</a></li><li><a href="sobre.html">Sobre nosotros</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="productos.html">Productos</a></li><li><a href="ubicacion.html">Ubicación</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+        <div class="footer-col"><h5>Servicios</h5><ul class="footer-links"><li><a href="servicios.html">Limpieza de oídos</a></li><li><a href="servicios.html">Evaluación auditiva</a></li><li><a href="servicios.html">Adaptación audífonos</a></li><li><a href="servicios.html">Calibración</a></li><li><a href="productos.html">Venta audífonos</a></li><li><a href="productos.html">Pilas y accesorios</a></li></ul></div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span data-cfg="calle">Calle Larga y Huayna Cápac</span></div>
+          <div class="footer-contact-item"><i class="fas fa-landmark"></i><span data-cfg="referencia">Frente al Museo Pumapungo</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="#" data-href="telefono" style="color:inherit"><span data-cfg="telefono">+593 00 000 0000</span></a></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="#" data-href="email" style="color:inherit"><span data-cfg="email">info@auditsa.ec</span></a></div>
+          <div class="footer-hours"><p><strong data-cfg="dias">Lunes a Viernes</strong></p><p data-cfg="horarios">09:00–13:00 · 15:00–18:00</p></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span data-cfg="copyright">© 2025 Auditsa Consultorios Auditivos. Todos los derechos reservados.</span><span>Cuenca, Ecuador 🇪🇨</span></div>
+    </div>
+  </footer>
+  <a href="#" class="whatsapp-float" aria-label="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="script.js"></script>
+  <script src="config.js"></script>
+<script>
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-question').setAttribute('aria-expanded','false'); });
+    if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+</script>
+</body>
+</html>
