@@ -40,13 +40,15 @@ const AUDITSA_CONFIG = {
      CONTACTO
   ------------------------------------------ */
   contacto: {
-    telefono:        "+593 00 000 0000",      // Número principal (con código país)
-    telefonoLink:    "tel:+593000000000",      // Para href tel:
-    whatsapp:        "+593 00 000 0000",       // Número WhatsApp
-    whatsappLink:    "https://wa.me/593000000000", // URL de WhatsApp (sin espacios ni +)
+    telefono:        "+593964114893",      // Número principal (con código país)
+    telefonoLink:    "tel:+593964114893",      // Para href tel:
+    whatsapp:        "+593964114893",       // Número WhatsApp
+    whatsappLink:    "https://wa.me/593964114893", // URL de WhatsApp (sin espacios ni +)
     whatsappMsg:     "Hola, me gustaría agendar una cita en AUDITSA.",
-    email:           "info@auditsa.ec",
-    emailLink:       "mailto:info@auditsa.ec",
+    email:           "cmzuniga@sudamericano.edu.ec",
+    emailLink:       "mailto:cmzuniga@sudamericano.edu.ec",
+    // email:           "auditsaconsultoriosauditivos@gmail.com",
+    // emailLink:       "mailto:auditsaconsultoriosauditivos@gmail.com",
   },
 
   /* ------------------------------------------
@@ -81,9 +83,9 @@ const AUDITSA_CONFIG = {
      Deja en "" si no tienes esa red todavía.
   ------------------------------------------ */
   redes: {
-    whatsapp:  "https://wa.me/593000000000",
-    facebook:  "https://www.facebook.com/auditsa",
-    instagram: "https://www.instagram.com/auditsa",
+    whatsapp:  "https://wa.me/593964114893",
+    facebook:  "https://www.facebook.com/AUDITSACentroAuditivo",
+    instagram: "https://www.instagram.com/auditsa.ec/",
     tiktok:    "",     // Dejar vacío si no aplica
     youtube:   "",     // Dejar vacío si no aplica
   },
