@@ -16,9 +16,9 @@ const AUDITSA_CONFIG = {
   /* ------------------------------------------
      INFORMACIÓN GENERAL
   ------------------------------------------ */
-  nombre:      "Auditsa",
+  nombre: "Auditsa",
   nombreLargo: "Auditsa Consultorios Auditivos",
-  slogan:      "Escuchar bien es vivir mejor",
+  slogan: "Escuchar bien es vivir mejor",
 
   /* ------------------------------------------
      LOGOS
@@ -27,53 +27,55 @@ const AUDITSA_CONFIG = {
   ------------------------------------------ */
   logos: {
     // Logo para navbar (horizontal, fondo claro)
-    navbar:         "assets/MORADO_2.png",
+    navbar: "assets/MORADO_2.png",
     // Logo para footer (horizontal, fondo oscuro)
-    footer:         "assets/BLANCO_2.png",
+    footer: "assets/BLANCO_2.png",
     // Logo cuadrado para favicon / hero
-    iconoCuadrado:  "assets/MORADO_1.png",
+    iconoCuadrado: "assets/MORADO_1.png",
     // Logo para favicon (puedes usar un .ico o .png pequeño)
-    favicon:        "assets/MORADO_1.png",
+    favicon: "assets/MORADO_1.png",
   },
 
   /* ------------------------------------------
      CONTACTO
   ------------------------------------------ */
   contacto: {
-    telefono:        "+593964114893",      // Número principal (con código país)
-    telefonoLink:    "tel:+593964114893",      // Para href tel:
-    whatsapp:        "+593964114893",       // Número WhatsApp
-    whatsappLink:    "https://wa.me/593964114893", // URL de WhatsApp (sin espacios ni +)
-    whatsappMsg:     "Hola, me gustaría agendar una cita en AUDITSA.",
-    email:           "cmzuniga@sudamericano.edu.ec",
-    emailLink:       "mailto:cmzuniga@sudamericano.edu.ec",
-    // email:           "auditsaconsultoriosauditivos@gmail.com",
-    // emailLink:       "mailto:auditsaconsultoriosauditivos@gmail.com",
+    telefono: "+593964114893",      // Número principal (con código país)
+    telefonoLink: "tel:+593964114893",      // Para href tel:
+    whatsapp: "+593964114893",       // Número WhatsApp
+    whatsappLink: "https://wa.me/593964114893", // URL de WhatsApp (sin espacios ni +)
+    whatsappMsg: "Hola, me gustaría agendar una cita en AUDITSA.",
+    // email:           "cmzuniga@sudamericano.edu.ec",
+    // emailLink:       "mailto:cmzuniga@sudamericano.edu.ec",
+    email: "auditsaconsultoriosauditivos@gmail.com",
+    emailLink: "mailto:auditsaconsultoriosauditivos@gmail.com",
   },
 
   /* ------------------------------------------
      UBICACIÓN
   ------------------------------------------ */
   ubicacion: {
-    calle:       "Calle Larga y Huayna Cápac",
-    referencia:  "Frente a la puerta principal del Museo Pumapungo",
-    ciudad:      "Cuenca",
-    provincia:   "Azuay",
-    pais:        "Ecuador",
-    // URL del iframe de Google Maps (embed)
-    // Para actualizar: Google Maps → Compartir → Insertar un mapa → copia la URL del src
-    mapaEmbed:   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.4906956019!2d-78.99776!3d-2.90191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd18040b770689%3A0x84f0fcd3a1bcc25c!2sMuseo+Pumapungo!5e0!3m2!1ses!2sec!4v1700000000000!5m2!1ses!2sec",
-    // URL directa para "Cómo llegar" (Google Maps normal)
-    mapaLink:    "https://www.google.com/maps/search/Calle+Larga+y+Huayna+Cápac,+Cuenca+Ecuador",
+    calle: "Calle Larga y Huayna Cápac",
+    referencia: "Frente a la puerta principal del Museo Pumapungo",
+    ciudad: "Cuenca",
+    provincia: "Azuay",
+    pais: "Ecuador",
+
+    // URL del iframe con el marcador oficial de Auditsa
+    // mapaEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.721454651336!2d-78.9958742!3d-2.9038234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd278f9dbfaffb%3A0xff34f86cbc00ed25!2sAuditsa%20Consultorios%20Auditivos!5e0!3m2!1ses-419!2sec!4v1715421234567!5m2!1ses-419!2sec",
+    mapaEmbed: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3984.686501487229!2d-78.9971703214264!3d-2.9063190620539032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd19f5a8fe92a5%3A0xe6ee64fb90f72598!2sAUDITSA!5e0!3m2!1ses!2sec!4v1775681329006!5m2!1ses!2sec",
+
+    // Enlace directo a la ficha para el botón "Cómo llegar"
+    mapaLink: "https://maps.app.goo.gl/bEzpRGsFYqvV1gy27",
   },
 
   /* ------------------------------------------
      HORARIOS
   ------------------------------------------ */
   horarios: {
-    dias:   "Lunes a Viernes",
+    dias: "Lunes a Viernes",
     manana: "09:00 – 13:00",
-    tarde:  "15:00 – 18:00",
+    tarde: "15:00 – 18:00",
     // Texto corto para footer / strips
     resumen: "Lun – Vie: 09:00–13:00 · 15:00–18:00",
   },
@@ -83,11 +85,11 @@ const AUDITSA_CONFIG = {
      Deja en "" si no tienes esa red todavía.
   ------------------------------------------ */
   redes: {
-    whatsapp:  "https://wa.me/593964114893",
-    facebook:  "https://www.facebook.com/AUDITSACentroAuditivo",
+    whatsapp: "https://wa.me/593964114893",
+    facebook: "https://www.facebook.com/AUDITSACentroAuditivo",
     instagram: "https://www.instagram.com/auditsa.ec/",
-    tiktok:    "",     // Dejar vacío si no aplica
-    youtube:   "",     // Dejar vacío si no aplica
+    tiktok: "",     // Dejar vacío si no aplica
+    youtube: "",     // Dejar vacío si no aplica
   },
 
   /* ------------------------------------------
@@ -106,10 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function applyConfig(cfg) {
-  const c  = cfg.contacto;
-  const u  = cfg.ubicacion;
-  const h  = cfg.horarios;
-  const r  = cfg.redes;
+  const c = cfg.contacto;
+  const u = cfg.ubicacion;
+  const h = cfg.horarios;
+  const r = cfg.redes;
   const lo = cfg.logos;
 
   // ---- Logos ----
@@ -126,29 +128,29 @@ function applyConfig(cfg) {
   fav.href = lo.favicon;
 
   // ---- Texto dinámico ----
-  setAll('[data-cfg="nombre"]',       cfg.nombre);
-  setAll('[data-cfg="nombreLargo"]',  cfg.nombreLargo);
-  setAll('[data-cfg="slogan"]',       cfg.slogan);
-  setAll('[data-cfg="telefono"]',     c.telefono);
-  setAll('[data-cfg="whatsapp"]',     c.whatsapp);
-  setAll('[data-cfg="email"]',        c.email);
-  setAll('[data-cfg="calle"]',        u.calle);
-  setAll('[data-cfg="referencia"]',   u.referencia);
-  setAll('[data-cfg="ciudad"]',       u.ciudad);
-  setAll('[data-cfg="horarios"]',     h.resumen);
-  setAll('[data-cfg="horarioManana"]',h.manana);
+  setAll('[data-cfg="nombre"]', cfg.nombre);
+  setAll('[data-cfg="nombreLargo"]', cfg.nombreLargo);
+  setAll('[data-cfg="slogan"]', cfg.slogan);
+  setAll('[data-cfg="telefono"]', c.telefono);
+  setAll('[data-cfg="whatsapp"]', c.whatsapp);
+  setAll('[data-cfg="email"]', c.email);
+  setAll('[data-cfg="calle"]', u.calle);
+  setAll('[data-cfg="referencia"]', u.referencia);
+  setAll('[data-cfg="ciudad"]', u.ciudad);
+  setAll('[data-cfg="horarios"]', h.resumen);
+  setAll('[data-cfg="horarioManana"]', h.manana);
   setAll('[data-cfg="horarioTarde"]', h.tarde);
-  setAll('[data-cfg="dias"]',         h.dias);
-  setAll('[data-cfg="anio"]',         cfg.anio);
+  setAll('[data-cfg="dias"]', h.dias);
+  setAll('[data-cfg="anio"]', cfg.anio);
 
   // ---- Links ----
-  setHref('[data-href="telefono"]',   c.telefonoLink);
-  setHref('[data-href="whatsapp"]',   buildWa(c.whatsappLink, c.whatsappMsg));
-  setHref('[data-href="email"]',      c.emailLink);
-  setHref('[data-href="mapa"]',       u.mapaLink);
-  setHref('[data-href="facebook"]',   r.facebook);
-  setHref('[data-href="instagram"]',  r.instagram);
-  setHref('[data-href="tiktok"]',     r.tiktok);
+  setHref('[data-href="telefono"]', c.telefonoLink);
+  setHref('[data-href="whatsapp"]', buildWa(c.whatsappLink, c.whatsappMsg));
+  setHref('[data-href="email"]', c.emailLink);
+  setHref('[data-href="mapa"]', u.mapaLink);
+  setHref('[data-href="facebook"]', r.facebook);
+  setHref('[data-href="instagram"]', r.instagram);
+  setHref('[data-href="tiktok"]', r.tiktok);
 
   // WhatsApp float button
   document.querySelectorAll('.whatsapp-float').forEach(el => {
@@ -165,7 +167,7 @@ function applyConfig(cfg) {
     `© ${cfg.anio} ${cfg.nombreLargo}. Todos los derechos reservados.`);
 
   // Ocultar redes vacías
-  ['facebook','instagram','tiktok','youtube'].forEach(red => {
+  ['facebook', 'instagram', 'tiktok', 'youtube'].forEach(red => {
     if (!r[red]) {
       document.querySelectorAll(`[data-red="${red}"]`).forEach(el => {
         el.style.display = 'none';

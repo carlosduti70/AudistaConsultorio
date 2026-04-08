@@ -235,6 +235,7 @@
     }
 
     input.error,
+    select.error,
     textarea.error {
       border-color: #e53e3e;
       background: #fff5f5;
@@ -301,6 +302,7 @@
       text-align: left;
       cursor: pointer;
       transition: background var(--transition);
+      border: none;
     }
 
     .faq-question:hover {
@@ -392,19 +394,25 @@
           <div class="form-header">
             <span class="section-label">Escríbenos</span>
             <h3>Formulario de contacto</h3>
-            <p>Responderemos tu mensaje a la brevedad, generalmente dentro de 24 horas hábiles.</p>
+            <p>Responderemos tu mensaje a la brevedad, directamente a tu WhatsApp.</p>
           </div>
           <form id="contactForm" novalidate>
             <div class="form-row">
-              <div class="form-group"><label for="name">Nombre completo <span>*</span></label><input type="text"
-                  id="name" name="name" placeholder="Tu nombre" autocomplete="name" /><span class="field-error"
-                  id="nameError"></span></div>
-              <div class="form-group"><label for="email">Correo electrónico <span>*</span></label><input type="email"
-                  id="email" name="email" placeholder="tu@correo.com" autocomplete="email" /><span class="field-error"
-                  id="emailError"></span></div>
+              <div class="form-group">
+                <label for="name">Nombre completo <span>*</span></label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" autocomplete="name" />
+                <span class="field-error" id="nameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo <span>*</span></label>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" />
+                <span class="field-error" id="emailError"></span>
+              </div>
             </div>
-            <div class="form-group"><label for="phone">Teléfono / WhatsApp</label><input type="tel" id="phone"
-                name="phone" placeholder="+593 00 000 0000" autocomplete="tel" /></div>
+            <div class="form-group">
+              <label for="phone">Teléfono / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+593 00 000 0000" autocomplete="tel" />
+            </div>
             <div class="form-group">
               <label for="subject">Asunto <span>*</span></label>
               <select id="subject" name="subject">
@@ -419,11 +427,13 @@
               </select>
               <span class="field-error" id="subjectError"></span>
             </div>
-            <div class="form-group"><label for="message">Mensaje <span>*</span></label><textarea id="message"
-                name="message" placeholder="Escribe aquí tu consulta o comentario…"></textarea><span class="field-error"
-                id="messageError"></span></div>
+            <div class="form-group">
+              <label for="message">Mensaje <span>*</span></label>
+              <textarea id="message" name="message" placeholder="Escribe aquí tu consulta o comentario…"></textarea>
+              <span class="field-error" id="messageError"></span>
+            </div>
             <div class="form-submit">
-              <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
+              <button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Enviar por WhatsApp</button>
               <span class="form-note"><i class="fas fa-lock"></i> Tu información es confidencial.</span>
             </div>
           </form>
@@ -553,12 +563,12 @@
           <p class="footer-desc">En Auditsa nos especializamos en el cuidado integral de la salud auditiva. Sabemos que
             escuchar bien es vivir mejor.</p>
           <div class="footer-socials">
-            <a href="#" data-href="whatsapp" data-red="whatsapp" class="footer-social-link" aria-label="WhatsApp"><i
-                class="fab fa-whatsapp"></i></a>
-            <a href="#" data-href="facebook" data-red="facebook" class="footer-social-link" aria-label="Facebook"><i
-                class="fab fa-facebook-f"></i></a>
-            <a href="#" data-href="instagram" data-red="instagram" class="footer-social-link" aria-label="Instagram"><i
-                class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" data-href="whatsapp" data-red="whatsapp" class="footer-social-link"
+              aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank" data-href="facebook" data-red="facebook" class="footer-social-link"
+              aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" data-href="instagram" data-red="instagram" class="footer-social-link"
+              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -603,9 +613,12 @@
           reservados.</span><span>Cuenca, Ecuador 🇪🇨</span></div>
     </div>
   </footer>
-  <a href="#" class="whatsapp-float" aria-label="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" target="_blank" class="whatsapp-float" aria-label="Contáctanos por WhatsApp"><i
+      class="fab fa-whatsapp"></i></a>
+
   <script src="script.js"></script>
   <script src="config.js"></script>
+
   <script>
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -613,6 +626,74 @@
         const isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-question').setAttribute('aria-expanded', 'false'); });
         if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Evita que la página se recargue
+
+        // Obtener los valores de los campos
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const subjectSelect = document.getElementById('subject');
+        const subject = subjectSelect.options[subjectSelect.selectedIndex].text;
+        const subjectValue = subjectSelect.value;
+        const message = document.getElementById('message').value.trim();
+
+        // Limpiar errores previos
+        document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+        document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+
+        let isValid = true;
+
+        // Validación simple
+        if (!name) {
+          document.getElementById('name').classList.add('error');
+          document.getElementById('nameError').textContent = 'El nombre es requerido';
+          isValid = false;
+        }
+        if (!email) {
+          document.getElementById('email').classList.add('error');
+          document.getElementById('emailError').textContent = 'El correo es requerido';
+          isValid = false;
+        }
+        if (!subjectValue) {
+          document.getElementById('subject').classList.add('error');
+          document.getElementById('subjectError').textContent = 'Seleccione un asunto';
+          isValid = false;
+        }
+        if (!message) {
+          document.getElementById('message').classList.add('error');
+          document.getElementById('messageError').textContent = 'Escriba un mensaje';
+          isValid = false;
+        }
+
+        // Si la validación pasa, construir el mensaje de WhatsApp
+        if (isValid) {
+          // --- AQUÍ DEBES PONER EL NÚMERO DE WHATSAPP DE LA EMPRESA ---
+          // Código de país + número, sin el '+' ni espacios. Ej: 593999999999
+          const numeroWhatsApp = '593964114893';
+
+          // Construir el texto del mensaje con formato (asteriscos para negritas en WhatsApp)
+          const textoMensaje = `*¡Hola Auditsa!:*\n\n` +
+            `*Nombre:* ${name}\n` +
+            `*Correo:* ${email}\n` +
+            `*Teléfono:* ${phone || 'No proporcionado'}\n` +
+            `*Asunto:* ${subject}\n\n` +
+            `*Mensaje:*\n${message}`;
+
+          // Codificar el texto para que funcione en la URL
+          const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoMensaje)}`;
+
+          // Abrir WhatsApp en una nueva pestaña
+          window.open(urlWhatsApp, '_blank');
+        }
       });
     });
   </script>
