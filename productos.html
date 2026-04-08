@@ -79,9 +79,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
       position: relative;
       overflow: hidden;
+    }
+
+    /* NUEVO: Estilos para las imágenes de los productos */
+    .product-image img {
+      max-width: 75%;
+      max-height: 75%;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.08);
     }
 
     .product-image::before {
@@ -93,6 +106,7 @@
       height: 120px;
       border-radius: 50%;
       background: rgba(155, 47, 142, .08);
+      z-index: 0;
     }
 
     .product-category-badge {
@@ -107,6 +121,8 @@
       font-weight: 700;
       letter-spacing: .06em;
       text-transform: uppercase;
+      z-index: 2;
+      /* Asegura que quede por encima de la imagen */
     }
 
     .badge-purple {
@@ -222,34 +238,6 @@
       color: var(--purple);
     }
 
-    .brands-row {
-      display: flex;
-      gap: 28px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .brand-chip {
-      background: white;
-      border: 1px solid var(--gray-100);
-      border-radius: 12px;
-      padding: 16px 28px;
-      font-weight: 700;
-      font-family: var(--font-display);
-      color: var(--black);
-      font-size: 1.05rem;
-      box-shadow: var(--shadow-sm);
-      transition: all var(--transition);
-    }
-
-    .brand-chip:hover {
-      border-color: var(--purple);
-      color: var(--purple);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
     @media(max-width:900px) {
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -309,212 +297,315 @@
         <button class="filter-btn active" data-cat="all">Todos</button>
         <button class="filter-btn" data-cat="audifonos">Audífonos</button>
         <button class="filter-btn" data-cat="pilas">Pilas</button>
-        <button class="filter-btn" data-cat="repuestos">Repuestos</button>
-        <button class="filter-btn" data-cat="kits">Kits de limpieza</button>
-        <button class="filter-btn" data-cat="medicados">Medicados</button>
+        <button class="filter-btn" data-cat="repuestos">Repuestos y Accesorios</button>
       </div>
+
       <div class="products-grid" id="productsGrid">
-        <article class="product-card fade-up" data-cat="audifonos" data-delay="0">
-          <div class="product-image">🦻<span class="product-category-badge badge-purple">Audífonos</span></div>
+
+        <article class="product-card fade-up" data-cat="repuestos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/intracanal-430x430.png"
+              alt="Base cargadora intracanal">
+            <span class="product-category-badge badge-purple">Accesorio</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Audífono Retroauricular (BTE)</h3>
-            <p class="product-desc">Modelo detrás de la oreja, ideal para pérdidas auditivas leves a severas. Alta
-              potencia y durabilidad, compatible con pilas tamaño 312 y 13.</p>
-            <div class="product-tags"><span class="product-tag">BTE</span><span class="product-tag">Todas las
-                edades</span><span class="product-tag">Pérdida leve-severa</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Base cargadora intracanal</h3>
+            <p class="product-desc">Solución de carga práctica y compacta para audífonos de tipo intracanal,
+              garantizando energía continua.</p>
+            <div class="product-tags"><span class="product-tag">Accesorio</span><span
+                class="product-tag">Recargable</span></div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
-        <article class="product-card fade-up" data-cat="audifonos" data-delay="80">
-          <div class="product-image">👂<span class="product-category-badge badge-dark">Audífonos</span></div>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/1-430x430.png" alt="Beltone Ach63">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Audífono Intracanal (RIC)</h3>
-            <p class="product-desc">Diseño discreto que se aloja dentro del canal auditivo. Cómodo, estético y eficiente
-              para pérdidas leves a moderadas. Incluye control de volumen.</p>
-            <div class="product-tags"><span class="product-tag">RIC</span><span class="product-tag">Discreto</span><span
-                class="product-tag">Pérdida leve-moderada</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Beltone Ach63</h3>
+            <p class="product-desc">Audífono de alta fidelidad diseñado para proporcionar una experiencia sonora natural
+              y clara.</p>
+            <div class="product-tags"><span class="product-tag">Beltone</span><span class="product-tag">Digital</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
-        <article class="product-card fade-up" data-cat="audifonos" data-delay="160">
-          <div class="product-image">🎧<span class="product-category-badge badge-purple">Audífonos</span></div>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/3-430x430.png" alt="Beltone Amz63">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Audífono Digital Bluetooth</h3>
-            <p class="product-desc">Tecnología digital de última generación con conectividad Bluetooth. Se sincroniza
-              con teléfonos móviles y TV. Ideal para un estilo de vida activo.</p>
-            <div class="product-tags"><span class="product-tag">Bluetooth</span><span
-                class="product-tag">Digital</span><span class="product-tag">Tecnología avanzada</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Beltone Amz63</h3>
+            <p class="product-desc">Modelo versátil que combina tecnología avanzada con un diseño ergonómico para
+              pérdida moderada.</p>
+            <div class="product-tags"><span class="product-tag">BTE</span><span class="product-tag">Amaze</span></div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
-        <article class="product-card fade-up" data-cat="audifonos" data-delay="0">
-          <div class="product-image">🔊<span class="product-category-badge badge-dark">Audífonos</span></div>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/4-430x430.png" alt="Beltone Amz64">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Audífono de Alta Potencia</h3>
-            <p class="product-desc">Diseñado para pérdidas auditivas severas a profundas. Alta amplificación con control
-              de retroalimentación y procesamiento de señal avanzado.</p>
-            <div class="product-tags"><span class="product-tag">Alta potencia</span><span class="product-tag">Pérdida
-                severa</span><span class="product-tag">Adultos</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Beltone Amz64</h3>
+            <p class="product-desc">Dispositivo auditivo potente, optimizado para ofrecer claridad y reducción de ruido
+              ambiental.</p>
+            <div class="product-tags"><span class="product-tag">Potencia</span><span class="product-tag">Beltone</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
-        <article class="product-card fade-up" data-cat="pilas" data-delay="80">
-          <div class="product-image">🔋<span class="product-category-badge badge-purple">Pilas</span></div>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/imagen1-02-430x430.png" alt="Beltone Amz66">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Pilas Zinc-Aire Tamaño 312</h3>
-            <p class="product-desc">Pilas especializadas para audífonos ITC y RIC. Larga duración y rendimiento estable.
-              Presentación en blíster de 6 unidades. Compatible con la mayoría de marcas.</p>
-            <div class="product-tags"><span class="product-tag">Tamaño 312</span><span
-                class="product-tag">Zinc-Aire</span><span class="product-tag">Pack x6</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Beltone Amz66</h3>
+            <p class="product-desc">Audífono retroauricular diseñado para durabilidad y rendimiento constante en el uso
+              diario.</p>
+            <div class="product-tags"><span class="product-tag">Durabilidad</span><span class="product-tag">BTE</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
-        <article class="product-card fade-up" data-cat="pilas" data-delay="160">
-          <div class="product-image">⚡<span class="product-category-badge badge-dark">Pilas</span></div>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/imagen1-04-430x430.png" alt="Beltone Amz76">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Pilas Zinc-Aire Tamaño 13</h3>
-            <p class="product-desc">Para audífonos BTE y modelos de alta potencia. Mayor capacidad energética para uso
-              intensivo. Disponibles en pack de 6 y 12 unidades.</p>
-            <div class="product-tags"><span class="product-tag">Tamaño 13</span><span class="product-tag">Alta
-                capacidad</span><span class="product-tag">BTE</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Beltone Amz76</h3>
+            <p class="product-desc">Solución auditiva de alto rango que proporciona una conectividad superior y ajustes
+              personalizados.</p>
+            <div class="product-tags"><span class="product-tag">Conectividad</span><span
+                class="product-tag">Premium</span></div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
-        <article class="product-card fade-up" data-cat="kits" data-delay="0">
-          <div class="product-image">🧹<span class="product-category-badge badge-purple">Kits</span></div>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/imagen1-03-430x430.png" alt="Beltone Amz86">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Kit de Limpieza Profesional</h3>
-            <p class="product-desc">Set completo para mantenimiento diario: cepillo de limpieza, pick, paño especial y
-              caja deshumidificadora para prolongar la vida útil del equipo.</p>
-            <div class="product-tags"><span class="product-tag">Todas las marcas</span><span class="product-tag">Uso
-                diario</span><span class="product-tag">Kit completo</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Beltone Amz86</h3>
+            <p class="product-desc">El nivel más avanzado de la línea Amaze, con procesamiento de sonido inteligente y
+              máximo confort.</p>
+            <div class="product-tags"><span class="product-tag">Inteligente</span><span class="product-tag">Top</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
-        <article class="product-card fade-up" data-cat="repuestos" data-delay="80">
-          <div class="product-image">🔩<span class="product-category-badge badge-dark">Repuestos</span></div>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/7-430x430.png" alt="Beltone Boost Ultra">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Tubos y Cúpulas para BTE</h3>
-            <p class="product-desc">Repuestos originales y compatibles para audífonos retroauriculares. Incluye tubos de
-              silicona y cúpulas en tallas S, M, L para una adaptación perfecta.</p>
-            <div class="product-tags"><span class="product-tag">BTE</span><span class="product-tag">Silicona</span><span
-                class="product-tag">S/M/L</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Beltone Boost Ultra</h3>
+            <p class="product-desc">Diseñado para pérdidas severas a profundas, ofreciendo la potencia necesaria sin
+              sacrificar claridad.</p>
+            <div class="product-tags"><span class="product-tag">Súper Potencia</span><span
+                class="product-tag">Ultra</span></div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
-        <article class="product-card fade-up" data-cat="medicados" data-delay="160">
-          <div class="product-image">💊<span class="product-category-badge badge-purple">Medicados</span></div>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/08/cic-02-430x430.png" alt="Beltone CIC">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-name">Audífonos Medicados</h3>
-            <p class="product-desc">Dispositivos especializados para tratamiento de infecciones y condiciones auditivas.
-              Dispensación bajo prescripción y asesoramiento profesional.</p>
-            <div class="product-tags"><span class="product-tag">Con prescripción</span><span
-                class="product-tag">Tratamiento</span><span class="product-tag">Especializado</span></div>
-            <div class="product-cta"><a href="contacto.html" class="product-inquiry-btn">Consultar <i
-                  class="fas fa-arrow-right"></i></a><a href="#" data-href="whatsapp" class="product-wa-btn"
-                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+            <h3 class="product-name">Beltone CIC</h3>
+            <p class="product-desc">Audífono intra-canal virtualmente invisible que ofrece una solución estética y
+              funcional.</p>
+            <div class="product-tags"><span class="product-tag">Invisible</span><span class="product-tag">CIC</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/08/15-430x430.png" alt="Beltone Imagine ITE">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone Imagine ITE</h3>
+            <p class="product-desc">Tecnología Imagine en formato intra-auricular a medida, proporcionando una audición
+              natural.</p>
+            <div class="product-tags"><span class="product-tag">ITE</span><span class="product-tag">A medida</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/09/bel-430x430.png" alt="Beltone Imagine 63">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone Imagine 63</h3>
+            <p class="product-desc">Incorpora el revolucionario diseño M&RIE para una localización del sonido
+              inigualable.</p>
+            <div class="product-tags"><span class="product-tag">M&RIE</span><span class="product-tag">Imagine</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/5-430x430.png" alt="Beltone Imagine 76">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone Imagine 76</h3>
+            <p class="product-desc">Audífono de gama alta que optimiza la escucha en ambientes ruidosos con la mejor
+              calidad sonora.</p>
+            <div class="product-tags"><span class="product-tag">Premium</span><span class="product-tag">M&RIE</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/imagen1_Mesa-de-trabajo-1-430x430.png"
+              alt="Beltone Imagine 76">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone Img86</h3>
+            <p class="product-desc">Audífono de gama alta que optimiza la escucha en ambientes ruidosos con la mejor
+              calidad sonora.</p>
+            <div class="product-tags"><span class="product-tag">Premium</span><span class="product-tag">M&RIE</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="pilas">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/logocaprotecsa.png" alt="Baterías Audifon"
+              style="opacity: 0.6;">
+            <span class="product-category-badge badge-purple">Pilas</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Paquete de baterías +10</h3>
+            <p class="product-desc">Pilas de alta duración diseñadas específicamente para audífonos digitales.
+              Garantizan un rendimiento óptimo.</p>
+            <div class="product-tags"><span class="product-tag">Pilas</span><span class="product-tag">Larga
+                duración</span></div>
+            <div class="product-cta">
+              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <section class="section section--gray">
-    <div class="container">
-      <div class="section-header section-header--center fade-up"><span class="section-label">Marcas de confianza</span>
-        <h2>Trabajamos con todas las marcas</h2>
-        <div class="divider"></div>
-        <p>Soporte y mantenimiento para audífonos de los principales fabricantes del mercado.</p>
-      </div>
-      <!-- <div class="brands-row">
-        <div class="brand-chip fade-up" data-delay="0">Phonak</div>
-        <div class="brand-chip fade-up" data-delay="80">Siemens</div>
-        <div class="brand-chip fade-up" data-delay="160">Oticon</div>
-        <div class="brand-chip fade-up" data-delay="240">Widex</div>
-        <div class="brand-chip fade-up" data-delay="320">Starkey</div>
-        <div class="brand-chip fade-up" data-delay="400">ReSound</div>
-        <div class="brand-chip fade-up" data-delay="480">Unitron</div>
-      </div> -->
-    </div>
-  </section>
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
           <a href="index.html" style="display:inline-flex;margin-bottom:0">
-            <img data-logo="footer" class="footer-logo-img" src="assets/BLANCO_2.png"
-              alt="Auditsa Consultorios Auditivos" style="width: 200px; height: auto;" />
+            <img data-logo="footer" class="footer-logo-img" src="assets/BLANCO_2.png" alt="Auditsa"
+              style="width: 200px; height: auto;" />
           </a>
           <p class="footer-desc">En Auditsa nos especializamos en el cuidado integral de la salud auditiva. Sabemos que
             escuchar bien es vivir mejor.</p>
-          <div class="footer-socials">
-            <a href="#" data-href="whatsapp" data-red="whatsapp" class="footer-social-link" aria-label="WhatsApp"><i
-                class="fab fa-whatsapp"></i></a>
-            <a href="#" data-href="facebook" data-red="facebook" class="footer-social-link" aria-label="Facebook"><i
-                class="fab fa-facebook-f"></i></a>
-            <a href="#" data-href="instagram" data-red="instagram" class="footer-social-link" aria-label="Instagram"><i
-                class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h5>Navegación</h5>
-          <ul class="footer-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="sobre.html">Sobre nosotros</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="ubicacion.html">Ubicación</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Servicios</h5>
-          <ul class="footer-links">
-            <li><a href="servicios.html">Limpieza de oídos</a></li>
-            <li><a href="servicios.html">Evaluación auditiva</a></li>
-            <li><a href="servicios.html">Adaptación audífonos</a></li>
-            <li><a href="servicios.html">Calibración</a></li>
-            <li><a href="productos.html">Venta audífonos</a></li>
-            <li><a href="productos.html">Pilas y accesorios</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Contacto</h5>
-          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span data-cfg="calle">Calle Larga y
-              Huayna Cápac</span></div>
-          <div class="footer-contact-item"><i class="fas fa-landmark"></i><span data-cfg="referencia">Frente al Museo
-              Pumapungo</span></div>
-          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="#" data-href="telefono"
-              style="color:inherit"><span data-cfg="telefono">+593 00 000 0000</span></a></div>
-          <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="#" data-href="email"
-              style="color:inherit"><span data-cfg="email">info@auditsa.ec</span></a></div>
-          <div class="footer-hours">
-            <p><strong data-cfg="dias">Lunes a Viernes</strong></p>
-            <p data-cfg="horarios">09:00–13:00 · 15:00–18:00</p>
-          </div>
         </div>
       </div>
-      <div class="footer-bottom"><span data-cfg="copyright">© 2025 Auditsa Consultorios Auditivos. Todos los derechos
-          reservados.</span><span>Cuenca, Ecuador 🇪🇨</span></div>
+      <div class="footer-bottom"><span>© 2025 Auditsa. Todos los derechos reservados.</span><span>Cuenca, Ecuador
+          🇪🇨</span></div>
     </div>
   </footer>
+
   <a href="#" class="whatsapp-float" aria-label="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const products = document.querySelectorAll('.product-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remover la clase active de todos los botones
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Añadir la clase active al botón clicado
+          btn.classList.add('active');
+
+          const filterValue = btn.getAttribute('data-cat');
+
+          // Mostrar u ocultar productos según la categoría seleccionada
+          products.forEach(product => {
+            const productCategory = product.getAttribute('data-cat');
+            if (filterValue === 'all' || filterValue === productCategory) {
+              product.style.display = 'flex'; // Usamos flex porque las tarjetas están estilizadas así
+            } else {
+              product.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+
   <script src="script.js"></script>
   <script src="config.js"></script>
 
