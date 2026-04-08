@@ -83,7 +83,6 @@
       overflow: hidden;
     }
 
-    /* NUEVO: Estilos para las imágenes de los productos */
     .product-image img {
       max-width: 75%;
       max-height: 75%;
@@ -122,7 +121,6 @@
       letter-spacing: .06em;
       text-transform: uppercase;
       z-index: 2;
-      /* Asegura que quede por encima de la imagen */
     }
 
     .badge-purple {
@@ -174,24 +172,10 @@
     .product-cta {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
+      /* Modificado para mantener el botón a la derecha */
       padding-top: 16px;
       border-top: 1px solid var(--gray-100);
-    }
-
-    .product-inquiry-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--purple);
-      font-weight: 600;
-      font-size: .85rem;
-      transition: all var(--transition);
-    }
-
-    .product-inquiry-btn:hover {
-      gap: 10px;
-      color: var(--black);
     }
 
     .product-wa-btn {
@@ -311,11 +295,10 @@
           <div class="product-body">
             <h3 class="product-name">Base cargadora intracanal</h3>
             <p class="product-desc">Solución de carga práctica y compacta para audífonos de tipo intracanal,
-              garantizando energía continua.</p>
+              garantizando energía continua para su día a día.</p>
             <div class="product-tags"><span class="product-tag">Accesorio</span><span
                 class="product-tag">Recargable</span></div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -333,7 +316,6 @@
             <div class="product-tags"><span class="product-tag">Beltone</span><span class="product-tag">Digital</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -350,7 +332,6 @@
               pérdida moderada.</p>
             <div class="product-tags"><span class="product-tag">BTE</span><span class="product-tag">Amaze</span></div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -368,7 +349,6 @@
             <div class="product-tags"><span class="product-tag">Potencia</span><span class="product-tag">Beltone</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -386,7 +366,6 @@
             <div class="product-tags"><span class="product-tag">Durabilidad</span><span class="product-tag">BTE</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -404,7 +383,6 @@
             <div class="product-tags"><span class="product-tag">Conectividad</span><span
                 class="product-tag">Premium</span></div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -422,7 +400,6 @@
             <div class="product-tags"><span class="product-tag">Inteligente</span><span class="product-tag">Top</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -440,7 +417,6 @@
             <div class="product-tags"><span class="product-tag">Súper Potencia</span><span
                 class="product-tag">Ultra</span></div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -458,7 +434,6 @@
             <div class="product-tags"><span class="product-tag">Invisible</span><span class="product-tag">CIC</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -476,7 +451,6 @@
             <div class="product-tags"><span class="product-tag">ITE</span><span class="product-tag">A medida</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -494,7 +468,6 @@
             <div class="product-tags"><span class="product-tag">M&RIE</span><span class="product-tag">Imagine</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -512,25 +485,198 @@
             <div class="product-tags"><span class="product-tag">Premium</span><span class="product-tag">M&RIE</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
         </article>
+
         <article class="product-card fade-up" data-cat="audifonos">
           <div class="product-image">
             <img src="https://caprotecsa.com/wp-content/uploads/2023/05/imagen1_Mesa-de-trabajo-1-430x430.png"
-              alt="Beltone Imagine 76">
+              alt="Beltone Img86">
             <span class="product-category-badge badge-purple">Audífonos</span>
           </div>
           <div class="product-body">
             <h3 class="product-name">Beltone Img86</h3>
-            <p class="product-desc">Audífono de gama alta que optimiza la escucha en ambientes ruidosos con la mejor
-              calidad sonora.</p>
-            <div class="product-tags"><span class="product-tag">Premium</span><span class="product-tag">M&RIE</span>
+            <p class="product-desc">Avanzado dispositivo auditivo que ofrece un sonido brillante y natural con la
+              innovadora tecnología de adaptación automática.</p>
+            <div class="product-tags"><span class="product-tag">Premium</span><span class="product-tag">Avanzado</span>
             </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/08/cic-03-700x700.png" alt="Beltone ITC">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone ITC</h3>
+            <p class="product-desc">Audífono intra-canal hecho a medida, combinando máxima discreción con un rendimiento
+              auditivo excepcional y cómodo.</p>
+            <div class="product-tags"><span class="product-tag">ITC</span><span class="product-tag">A Medida</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/08/cic_Mesa-de-trabajo-1-700x700.png"
+              alt="Beltone ITE">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone ITE</h3>
+            <p class="product-desc">Modelo intra-auricular personalizado, fácil de manejar e ideal para quienes buscan
+              comodidad sin sacrificar potencia.</p>
+            <div class="product-tags"><span class="product-tag">ITE</span><span class="product-tag">Personalizado</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/6.png" alt="Beltone Recargable">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone Recargable</h3>
+            <p class="product-desc">Olvídese de cambiar pilas. Este modelo cuenta con una batería de ion-litio integrada
+              que le brinda energía para todo el día.</p>
+            <div class="product-tags"><span class="product-tag">Sin Pilas</span><span
+                class="product-tag">Ion-Litio</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/8-1.png" alt="Beltone Rel63">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone Rel63</h3>
+            <p class="product-desc">Diseño retroauricular confiable y robusto. La opción perfecta para acompañar un
+              estilo de vida activo y dinámico.</p>
+            <div class="product-tags"><span class="product-tag">Robusto</span><span class="product-tag">BTE</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/imagen1-05-700x700.png" alt="Beltone Rly95">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Beltone Rly95</h3>
+            <p class="product-desc">El máximo exponente en conectividad y nitidez, adaptándose de forma automática e
+              inteligente a cualquier entorno sonoro.</p>
+            <div class="product-tags"><span class="product-tag">Premium</span><span
+                class="product-tag">Conectividad</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="repuestos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/5.png" alt="Cargador de audífonos BTE">
+            <span class="product-category-badge badge-purple">Accesorio</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Cargador de audífonos BTE</h3>
+            <p class="product-desc">Estación de carga confiable para sus audífonos retroauriculares (BTE). Diseño
+              elegante, seguro y muy fácil de utilizar.</p>
+            <div class="product-tags"><span class="product-tag">Accesorio</span><span
+                class="product-tag">Cargador</span></div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="repuestos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2023/05/6.png" alt="Cargador de audífonos RIC">
+            <span class="product-category-badge badge-purple">Accesorio</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Cargador de audífonos RIC</h3>
+            <p class="product-desc">Estuche cargador portátil para audífonos RIC. Protege sus dispositivos mientras los
+              recarga para el día siguiente.</p>
+            <div class="product-tags"><span class="product-tag">Accesorio</span><span
+                class="product-tag">Cargador</span></div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="repuestos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/Remote-Control-Easy-Line-076-0066-T9.webp"
+              alt="Control remoto Easy line">
+            <span class="product-category-badge badge-purple">Accesorio</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Control remoto Easy Line</h3>
+            <p class="product-desc">Ajuste el volumen y cambie los programas de sus audífonos de forma rápida y discreta
+              con este práctico control de bolsillo.</p>
+            <div class="product-tags"><span class="product-tag">Accesorio</span><span class="product-tag">Control</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/09/11.png" alt="Hormann Logical 2.0">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Hormann Logical 2.0</h3>
+            <p class="product-desc">Tecnología auditiva accesible que proporciona una comprensión clara del habla en sus
+              conversaciones cotidianas.</p>
+            <div class="product-tags"><span class="product-tag">Hormann</span><span class="product-tag">Esencial</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="audifonos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/09/10.png" alt="Hormann Natural 4.0">
+            <span class="product-category-badge badge-purple">Audífonos</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Hormann Natural 4.0</h3>
+            <p class="product-desc">Experimente un sonido equilibrado y rico con este modelo, diseñado para ofrecer una
+              experiencia de audición sin esfuerzo.</p>
+            <div class="product-tags"><span class="product-tag">Hormann</span><span class="product-tag">Avanzado</span>
+            </div>
+            <div class="product-cta">
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
@@ -538,18 +684,88 @@
 
         <article class="product-card fade-up" data-cat="pilas">
           <div class="product-image">
-            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/logocaprotecsa.png" alt="Baterías Audifon"
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/3-800x800.png" alt="Baterías Audifon 10"
               style="opacity: 0.6;">
             <span class="product-category-badge badge-purple">Pilas</span>
           </div>
           <div class="product-body">
-            <h3 class="product-name">Paquete de baterías +10</h3>
-            <p class="product-desc">Pilas de alta duración diseñadas específicamente para audífonos digitales.
-              Garantizan un rendimiento óptimo.</p>
-            <div class="product-tags"><span class="product-tag">Pilas</span><span class="product-tag">Larga
-                duración</span></div>
+            <h3 class="product-name">Paquete de baterías 10 (Amarillas)</h3>
+            <p class="product-desc">Pilas de zinc-aire de alta densidad energética, diseñadas específicamente para
+              audífonos intrauriculares pequeños (CIC).</p>
+            <div class="product-tags"><span class="product-tag">Pilas</span><span class="product-tag">Talla 10</span>
+            </div>
             <div class="product-cta">
-              <a href="#" class="product-inquiry-btn">Consultar <i class="fas fa-arrow-right"></i></a>
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="pilas">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/2-700x700.png" alt="Baterías Audifon 13"
+              style="opacity: 0.6;">
+            <span class="product-category-badge badge-purple">Pilas</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Paquete de baterías 13 (Naranjas)</h3>
+            <p class="product-desc">Pilas de larga duración, ideales para audífonos retroauriculares (BTE) e
+              intrauriculares de tamaño mediano.</p>
+            <div class="product-tags"><span class="product-tag">Pilas</span><span class="product-tag">Talla 13</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="pilas">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/1-700x700.png" alt="Baterías Audifon 312"
+              style="opacity: 0.6;">
+            <span class="product-category-badge badge-purple">Pilas</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Paquete de baterías 312 (Marrones)</h3>
+            <p class="product-desc">El formato más popular. Proporcionan el balance perfecto entre tamaño discreto y un
+              rendimiento óptimo diario.</p>
+            <div class="product-tags"><span class="product-tag">Pilas</span><span class="product-tag">Talla 312</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="pilas">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/jn-700x700.png" alt="Baterías Audifon 675"
+              style="opacity: 0.6;">
+            <span class="product-category-badge badge-purple">Pilas</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Paquete de baterías 675 (Azules)</h3>
+            <p class="product-desc">Pilas de máxima potencia y rendimiento, especialmente diseñadas para audífonos súper
+              potentes o implantes cocleares.</p>
+            <div class="product-tags"><span class="product-tag">Pilas</span><span class="product-tag">Talla 675</span>
+            </div>
+            <div class="product-cta">
+              <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card fade-up" data-cat="repuestos">
+          <div class="product-image">
+            <img src="https://caprotecsa.com/wp-content/uploads/2022/12/098-5160.webp" alt="Filtros para audífonos">
+            <span class="product-category-badge badge-purple">Accesorio</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">Repuestos de filtros anticerumen</h3>
+            <p class="product-desc">Proteja el receptor de sus audífonos contra la cera y la humedad con estos filtros
+              originales, prolongando su vida útil.</p>
+            <div class="product-tags"><span class="product-tag">Mantenimiento</span><span
+                class="product-tag">Repuestos</span></div>
+            <div class="product-cta">
               <a href="#" data-href="whatsapp" class="product-wa-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
