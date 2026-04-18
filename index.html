@@ -338,12 +338,15 @@
       background: linear-gradient(135deg, var(--purple-pale), var(--gray-100));
       border-radius: var(--radius-lg);
       aspect-ratio: 4/3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 6rem;
       position: relative;
       overflow: hidden;
+    }
+
+    .why-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .why-image-box::after {
@@ -701,11 +704,15 @@
     <div class="container">
       <div class="why-inner">
         <div class="why-visual fade-in">
-          <div class="why-image-box">🦻</div>
+          <div class="why-image-box">
+            <img src="assets/Image1.png" alt="Imagen auditiva" />
+          </div>
+
           <div class="why-stat-card card-1">
             <div class="why-stat-num">100%</div>
             <div class="why-stat-text">Atención personalizada</div>
           </div>
+
           <div class="why-stat-card card-2">
             <div class="why-stat-num">Todas</div>
             <div class="why-stat-text">las marcas de audífonos</div>
